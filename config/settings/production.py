@@ -61,6 +61,10 @@ INSTALLED_APPS += ("gunicorn", )
 
 # STORAGE CONFIGURATION
 # ------------------------------------------------------------------------------
+
+STATIC_ROOT = env("DJANGO_STATIC_ROOT")
+
+
 # Uploaded Media Files
 # ------------------------
 # See: http://django-storages.readthedocs.org/en/latest/index.html
