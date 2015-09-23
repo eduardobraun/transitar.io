@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block css %}
+{{ block.super }}
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
+{% endblock css %}
+
+{% block content  %}
+<div class="row no-glutter full-height">
+    <div id="map-container" class="col-xs-12 col-sm-9 col-md-10 full-height">
+        <div id="map" class="col-md-12 full-height"></div>
+    </div>
+    <div class="col-xs-3 col-md-2 full-height">Side bar</div>
+</div>
+{% endblock content %}
+
+{% block javascript %}
+{{ block.super }}
+<script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
+<script>
+var map = L.map('map').setView([-29.7056134, -53.8244197], 13);
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+</script>
+
+{% endblock javascript %}
+
