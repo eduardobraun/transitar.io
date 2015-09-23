@@ -56,6 +56,8 @@ django-mailgun-redux==0.3.0
 # ---------------
 djangorestframework
 djangorestframework-jsonapi
+djangorestframework-gis
 
 django-debug-toolbar
 django-extensions
+

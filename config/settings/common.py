@@ -44,6 +44,7 @@ THIRD_PARTY_APPS = (
     'allauth.socialaccount.providers.google',
     # 'allauth.socialaccount.providers.twitter',
     'rest_framework',
+    'rest_framework_gis',
 )
 
 # Apps specific for this project go here.
