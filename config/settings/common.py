@@ -49,6 +49,7 @@ THIRD_PARTY_APPS = (
 LOCAL_APPS = (
     'transitario.users',  # custom users app
     # Your stuff: custom apps go here
+    'api',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
