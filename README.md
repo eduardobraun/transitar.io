@@ -1,2 +1,2 @@
 # transitar.io
-Trans.itar.io
+An API for public transport lines control.
