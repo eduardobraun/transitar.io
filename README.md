@@ -5,3 +5,4 @@ An API for public transport lines control.
 - Fix the editor layout top spacing
 - Create view to import Stops from the OSM
 - Create Lines database
+- Write tests
