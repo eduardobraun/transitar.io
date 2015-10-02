@@ -1,4 +1,4 @@
-# transitar.io
+# Transitar.io
 An API for public transport lines control.
 
 #TODO
