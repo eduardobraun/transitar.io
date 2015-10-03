@@ -1,19 +1,20 @@
 .no-gutter [class*="-6"] {
         padding-left:0;
 }
+
 body {
     width: 100%;
     height: 100%;
     position: absolute;
 }
+
 .full-height {
     height: 100%;
 }
+
 .cont-class {
-    height:92%;
-}
-.nav-class {
-    height:8%;
+    height:100%;
+    padding-top:50px;
 }
 
 .no-pad {
@@ -24,3 +25,14 @@ body {
 .ovf-hide {
     overflow:hidden;
 }
+
+.fill {
+  top: 40px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  width: auto;
+  height: auto;
+}
+
