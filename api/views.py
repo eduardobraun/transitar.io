@@ -35,9 +35,9 @@ def osm_import(request):
     if (r.status_code == 200):
         i=0
         for e in r.json()['elements']:
-            if (Stop.objects.filter(osm_id=e['uid']).count() == 0):
+            if (Stop.objects.filter(osm_id=e['id']).count() == 0):
                 ns = Stop(name="SM-{}".format(i), pos=Point(e['lat'],e['lon']),
-                          osm_id=e['uid'], osm_data=e.__str__())
+                          osm_id=e['id'], osm_data=e.__str__())
                 ns.save()
             i+=1
         html = "<html><body>ok.</body></html>"
