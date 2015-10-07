@@ -14,5 +14,6 @@ urlpatterns = [
     url(r'^', include(router.urls)),
     url(r'^auth/', include('rest_framework.urls',
                                        namespace='rest_framework')),
+    url(r'^osm_import/$', views.osm_import),
 ]
 
