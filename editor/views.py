@@ -12,5 +12,7 @@ class EditorView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(EditorView, self).get_context_data(**kwargs)
+        query_res = Stop.objects.all()
+        context["stops"] = query_res
         return context
 

@@ -22,6 +22,10 @@ var map = L.map('map').setView([-29.7056134, -53.8244197], 13);
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
+{% for s in stops %}
+L.marker({{ s.pos[0] }}, {{ s.pos[1]}}]).bindPopup("{{s.name}}").addTo(map);
+{% endfor %}
+
 </script>
 
 {% endblock javascript %}
