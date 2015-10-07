@@ -8,7 +8,7 @@ class Node(models.Model):
                      (REVIEW,"Review"))
     name = models.CharField(max_length=50)
     pos = models.PointField()
-    osm_id = models.PositiveIntegerField(default=0)
+    osm_id = models.BigIntegerField(default=0)
     osm_data = models.TextField(default=u"")
     state = models.CharField(max_length=1, choices=STATE_CHOICES,
                              default=ACTIVE)
