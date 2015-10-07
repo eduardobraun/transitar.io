@@ -23,7 +23,7 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 {% for s in stops %}
-L.marker({{ s.pos.x }}, {{ s.pos.y}}]).bindPopup("{{s.name}}").addTo(map);
+L.marker([{{ s.pos.x }}, {{ s.pos.y}}]).bindPopup("{{s.name}}").addTo(map);
 {% endfor %}
 
 </script>
