@@ -109,13 +109,8 @@ STATIC_ROOT = env("DJANGO_STATIC_ROOT")
 
 # EMAIL
 # ------------------------------------------------------------------------------
-# DEFAULT_FROM_EMAIL = env('DJANGO_DEFAULT_FROM_EMAIL',
-#                          default='transitario <noreply@transitar.io>')
-# EMAIL_BACKEND = 'django_mailgun.MailgunBackend'
-# MAILGUN_ACCESS_KEY = env('DJANGO_MAILGUN_API_KEY')
-# MAILGUN_SERVER_NAME = env('DJANGO_MAILGUN_SERVER_NAME')
-# EMAIL_SUBJECT_PREFIX = env("DJANGO_EMAIL_SUBJECT_PREFIX", default='[transitario] ')
 # SERVER_EMAIL = env('DJANGO_SERVER_EMAIL', default=DEFAULT_FROM_EMAIL)
+DEFAULT_FROM_EMAIL = 'transite.me <noreply@transite.me>'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = 25
@@ -123,6 +118,8 @@ EMAIL_PORT = 25
 EMAIL_HOST_USER = 'mail'
 EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = False
+
+SERVER_EMAIL = DEFAULT_FROM_EMAIL
 
 # TEMPLATE CONFIGURATION
 # ------------------------------------------------------------------------------
