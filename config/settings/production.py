@@ -62,7 +62,7 @@ INSTALLED_APPS += ("gunicorn", )
 # STORAGE CONFIGURATION
 # ------------------------------------------------------------------------------
 
-STATIC_ROOT = env("DJANGO_STATIC_ROOT")
+STATIC_ROOT = '/var/www/static/'
 
 
 # Uploaded Media Files
