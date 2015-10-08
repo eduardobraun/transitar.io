@@ -31,10 +31,10 @@ var StopIcon = L.Icon.extend({
         popupAnchor:  [0, 0]
       }
     });
-var greenIcon = new StopIcon({iconUrl: '{% static "/images/icon_stop_green.png" %}'});
-var redIcon = new StopIcon({iconUrl: '{% static "/images/icon_stop_red.png" %}'});
-var blueIcon = new StopIcon({iconUrl: '{% static "/images/icon_stop_blue.png" %}'});
-var yellowIcon = new StopIcon({iconUrl: '{% static "/images/icon_stop_yellow.png" %}'});
+var greenIcon = new StopIcon({iconUrl: '{{ STATIC_URL }}images/icon_stop_green.png'});
+var redIcon = new StopIcon({iconUrl: '{{ STATIC_URL }}images/icon_stop_red.png'});
+var blueIcon = new StopIcon({iconUrl: '{{ STATIC_URL }}images/icon_stop_blue.png'});
+var yellowIcon = new StopIcon({iconUrl: '{{ STATIC_URL }}images/icon_stop_yellow.png'});
 
 {% for s in stops %}
 L.marker([{{ s.pos.x }}, {{ s.pos.y}}], {icon: blueIcon}).bindPopup("{{s.name}}").addTo(map);

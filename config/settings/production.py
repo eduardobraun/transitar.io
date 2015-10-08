@@ -93,13 +93,13 @@ STATIC_ROOT = '/var/www/static/'
 
 # URL that handles the media served from MEDIA_ROOT, used for managing
 # stored files.
-# MEDIA_URL = 'https://s3.amazonaws.com/%s/' % AWS_STORAGE_BUCKET_NAME
+MEDIA_URL = 'https://transite.me/static/'
 
 # Static Assets
 # ------------------------
 
 # STATICFILES_STORAGE = DEFAULT_FILE_STORAGE
-# STATIC_URL = MEDIA_URL
+STATIC_URL = MEDIA_URL
 
 # See: https://github.com/antonagestam/collectfast
 # For Django 1.7+, 'collectfast' should come before
