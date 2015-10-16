@@ -46,6 +46,7 @@ THIRD_PARTY_APPS = (
     'rest_framework',
     'rest_framework_gis',
     'corsheaders',
+    'static_precompiler',
 )
 
 # Apps specific for this project go here.
@@ -199,6 +200,7 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'static_precompiler.finders.StaticPrecompilerFinder',
 )
 
 # MEDIA CONFIGURATION
