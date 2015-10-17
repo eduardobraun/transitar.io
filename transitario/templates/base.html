@@ -1,6 +1,8 @@
+{% load compile_static %}
+{% load static %}
 {% load staticfiles i18n %}
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="TransiteApp">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -20,6 +22,7 @@
 
         {% block angular %}
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+        <script src="{% static "js/main.coffee"|compile %}"></script>
         {% endblock %}
     </head>
     <body>
@@ -68,9 +71,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         {# Latest Bootstrap #}
         <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
-
-        {# Project JS #}
-        {# <script src="{% static 'js/project.js' %}"></script> #}
         {% endblock javascript %}
     </body>
 </html>
