@@ -5,9 +5,8 @@ class TransiteAPIService
   @base_url: 'https://transite.me'
   constructor: (@$http, $log) ->
     $log.debug 'TransiteAPIService instance'
-  countries: ->
+  stops: ->
     @$http.get("#{base_url}/api/stops")
 
-
-# angular.module('TransiteApp').service 'TransiteAPIService', TransiteAPIService
+angular.module('TransiteApp').service 'TransiteAPIService', TransiteAPIService
 

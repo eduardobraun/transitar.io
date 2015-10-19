@@ -5,5 +5,5 @@ transite_modules = [
 
 m = angular.module('TransiteApp', [])
 m.config ($interpolateProvider) ->
-      $interpolateProvider.startSymbol('{[')
-      $interpolateProvider.endSymbol(']}')
+      $interpolateProvider.startSymbol('{[{')
+      $interpolateProvider.endSymbol('}]}')
