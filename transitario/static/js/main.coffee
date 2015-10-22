@@ -6,7 +6,7 @@ transite_modules = [
   'StopListCtrl'
 ]
 
-m = angular.module('TransiteApp', [])
+m = angular.module('TransiteApp', transite_modules)
 m.config ($interpolateProvider) ->
       $interpolateProvider.startSymbol('{[{')
       $interpolateProvider.endSymbol('}]}')
