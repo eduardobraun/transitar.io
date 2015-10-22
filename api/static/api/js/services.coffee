@@ -21,7 +21,7 @@ class Stops
     @$http.get(p)
 
   _get_all_pages: (p) ->
-    _get_page(p).success (d) ->
+    _get_page(p).success (d) =>
       @data.concat(d.data)
       if (d.links.next != null) ->
         _get_all_pages(d.links.next)
