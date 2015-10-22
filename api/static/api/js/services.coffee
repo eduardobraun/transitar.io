@@ -23,11 +23,11 @@ class Stops
   _get_all_pages: (p) ->
     @_get_page(p).success (d) =>
       @data.concat(d.data)
-      # if (d.links.next != null) ->
-      #   _get_all_pages(d.links.next)
-      # else ->
       @$log(d.data)
-      @deffered.resolve(@data)
+      if (d.links.next != null) ->
+        _get_all_pages(d.links.next)
+      else ->
+        @deffered.resolve(@data)
     return @deffered.promise
 
   _get: (relPath)->
