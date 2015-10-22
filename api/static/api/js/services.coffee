@@ -12,7 +12,8 @@
 base_name = 'api.services'
 
 class Stops
-   constructor: (@$log, @$http) ->
+  @$inject: ['$http', '$log']
+  constructor: (@$log, @$http) ->
 
   _get: (relPath)->
     return @$http.get("#{@env.serverUrl}/#{relPath}")
@@ -23,10 +24,5 @@ class Stops
   getPerson: (id) ->
     return @_get("person/#{id}")
 
-
-
-angular.module("#{base_name}.stops", []).factory("#{base_name}.stops", ['$log','$http',
-    ($log, $http) ->
-    new Stops($log, $http)
-])
+angular.module("#{base_name}.stops", []).service "#{base_name}.stops", Stops
 
