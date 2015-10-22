@@ -1,4 +1,7 @@
 transite_modules = [
+  'ngResource'
+  'ngRoute'
+  'Stops'
   'TransiteAPIService'
   'StopListCtrl'
 ]
