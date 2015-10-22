@@ -2,7 +2,6 @@ transite_modules = [
   'ngResource'
   'ngRoute'
   'api.services.stops'
-  'common.services.envProvider'
 ]
 
 m = angular.module('TransiteApp', transite_modules)

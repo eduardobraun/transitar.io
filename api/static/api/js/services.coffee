@@ -12,7 +12,7 @@
 base_name = 'api.services'
 
 class Stops
-   constructor: (@$log, @$http, @env) ->
+   constructor: (@$log, @$http) ->
 
   _get: (relPath)->
     return @$http.get("#{@env.serverUrl}/#{relPath}")
@@ -26,7 +26,7 @@ class Stops
 
 
 angular.module("#{base_name}.stops", []).factory("#{base_name}.stops", ['$log','$http',
-  'common.services.env', ($log, $http, env) ->
-    new Stops($log, $http, env)
+    ($log, $http) ->
+    new Stops($log, $http)
 ])
 
