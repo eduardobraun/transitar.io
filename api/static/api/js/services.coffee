@@ -12,17 +12,32 @@
 base_name = 'api.services'
 
 class Stops
-  @$inject: ['$http', '$log']
-  constructor: (@$log, @$http) ->
+  @$inject: ['$http', '$log', '$q']
+  constructor: (@$log, @$http, @$q) ->
+    @deffered: @$q.defer()
+    @data: []
+
+  _get_page: (p)->
+    @$http.get(p)
+
+  _get_all_pages: (p) ->
+    _get_page(p).success (d) ->
+      @data.concat(d.data)
+      if (d.links.next != null) ->
+        _get_all_pages(d.links.next)
+      else ->
+        @deffered.resolve(@data)
+    return @deffered.promise
 
   _get: (relPath)->
-    return @$http.get("#{@env.serverUrl}/#{relPath}")
+    return @$http.get("/api/stops#{relPath}")
 
-  getPeople: () ->
-    return @_get('people')
+  all: () ->
+    @data = []
+    return _get_all_pages("/api/stops")
 
-  getPerson: (id) ->
-    return @_get("person/#{id}")
+  one: (id) ->
+    return @_get("/#{id}")
 
 angular.module("#{base_name}.stops", []).service "#{base_name}.stops", Stops
 
