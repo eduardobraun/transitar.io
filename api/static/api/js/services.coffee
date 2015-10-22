@@ -23,7 +23,7 @@ class Stops
   _get_all_pages: (p) ->
     @_get_page(p).success (d) =>
       @data.concat(d.data)
-      @$log(d.data)
+      @$log.log(d.data)
       # if (d.links.next != null) =>
       #   @_get_all_pages(d.links.next)
       # else =>
