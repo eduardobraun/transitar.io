@@ -22,9 +22,9 @@
 
         {% block angular %}
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
-        <script src="{% static "js/main.coffee"|compile %}"></script>
         <script src="{% static "js/env.coffee"|compile %}"></script>
         <script src="{% static "api/js/services.coffee"|compile %}"></script>
+        <script src="{% static "js/main.coffee"|compile %}"></script>
         {% endblock %}
     </head>
     <body>
