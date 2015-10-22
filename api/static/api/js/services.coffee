@@ -14,7 +14,7 @@ base_name = 'api.services'
 class Stops
   @$inject: ['$http', '$log', '$q']
   constructor: (@$http, @$log, @$q) ->
-    @deffered = @$q.defer()
+    @deferred = @$q.defer()
     @data = []
 
   _get_page: (p)->
@@ -22,13 +22,13 @@ class Stops
 
   _get_all_pages: (p) ->
     @_get_page(p).success (d) =>
-      @data.concat(d.data)
-      @$log.log(d.data)
+      @data = @data.concat(d.data)
+      # @$log.log(d.data)
       if d.links.next != null
         @_get_all_pages(d.links.next)
       else
-        @deffered.resolve(@data)
-    return @deffered.promise
+        @deferred.resolve(@data)
+    return @deferred.promise
 
   _get: (relPath)->
     return @$http.get("/api/stops#{relPath}")
