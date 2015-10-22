@@ -18,7 +18,8 @@ class Stops
     @data = []
 
   _get_page: (p)->
-    @$http.get(p)
+    p = @$http.get(p)
+    return p
 
   _get_all_pages: (p) ->
     @_get_page(p).success (d) =>
