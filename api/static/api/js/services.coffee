@@ -24,9 +24,9 @@ class Stops
     @_get_page(p).success (d) =>
       @data.concat(d.data)
       @$log(d.data)
-      if (d.links.next != null) ->
-        _get_all_pages(d.links.next)
-      else ->
+      if (d.links.next != null) =>
+        @_get_all_pages(d.links.next)
+      else =>
         @deffered.resolve(@data)
     return @deffered.promise
 
