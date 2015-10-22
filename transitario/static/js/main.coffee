@@ -3,7 +3,6 @@ transite_modules = [
   'ngRoute'
   'api.services.stops'
   'common.services.envProvider'
-  'StopListCtrl'
 ]
 
 m = angular.module('TransiteApp', transite_modules)
