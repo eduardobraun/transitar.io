@@ -13,13 +13,12 @@ base_name = 'api.services'
 
 class Stops
   @$inject: ['$http', '$log', '$q']
-  constructor: (@$log, @$http, @$q) ->
+  constructor: (@$http, @$log, @$q) ->
     @deffered = @$q.defer()
     @data = []
 
   _get_page: (p)->
-    p = @$http.get(p)
-    return p
+    return @$http.get(p)
 
   _get_all_pages: (p) ->
     @_get_page(p).success (d) =>
