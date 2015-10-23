@@ -24,7 +24,7 @@
 
         <ul class="unstyled">
             <li ng-repeat="s in ctrl.stops">
-            <span>{[{s.name}]}</span>
+            <span>{[{s.attributes.name}]}</span>
             </li>
         </ul>
 
@@ -52,10 +52,11 @@ var greenIcon = new StopIcon({iconUrl: '{{ STATIC_URL }}images/icon_stop_green.p
 var redIcon = new StopIcon({iconUrl: '{{ STATIC_URL }}images/icon_stop_red.png'});
 var blueIcon = new StopIcon({iconUrl: '{{ STATIC_URL }}images/icon_stop_blue.png'});
 var yellowIcon = new StopIcon({iconUrl: '{{ STATIC_URL }}images/icon_stop_yellow.png'});
-
+{#
 {% for s in stops %}
 L.marker([{{ s.pos.x }}, {{ s.pos.y}}], {icon: blueIcon}).bindPopup("{{s.name}}").addTo(map);
 {% endfor %}
+#}
 </script>
 {% endspaceless %}
 
