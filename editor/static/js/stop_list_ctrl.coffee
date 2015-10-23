@@ -6,5 +6,7 @@ class StopListCtrl
     # console.log(@$scope)
     @stops = [{name: "Stop 1"}
               {name: "Stop 2"}]
+    stpsvc.all().then (d) =>
+      @stops = d
 
 angular.module('TransiteApp').controller 'StopListCtrl', StopListCtrl
