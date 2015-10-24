@@ -57,7 +57,7 @@ class Stops
                           method: 'GET',
                           isArray: true,
                           transformResponse: apiDataTransformer(@$http)
-                        }
+                        },
                  update: {method: "PUT"}
               }
     @pages = 1
