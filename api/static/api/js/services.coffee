@@ -40,13 +40,12 @@ base_name = 'api.services'
 #   one: (id) ->
 #     return @_get("/#{id}")
 
-apiDataTransformer: ($http) ->
-    return $http.defaults.transformResponse.concat([
-        (data, headersGetter) ->
-            result = data.data
-            result.meta = data.meta
-            return result
-    ])
+apiDataTransformer = ($http) ->
+  return $http.defaults.transformResponse.concat([
+         (data, headersGetter) ->
+           result = data.data
+           result.meta = data.meta
+           return result])
 
 class Stops
   url = "/api/stops/:id"
