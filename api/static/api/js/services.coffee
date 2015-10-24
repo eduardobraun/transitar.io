@@ -49,9 +49,9 @@ apiDataTransformer = ($http) ->
 
 class Stops
   url = "/api/stops/:id"
-  qry = { method: 'GET', isArray: true, transformResponse: apiDataTransformer(@$http)}
   @$inject: ['$log', '$resource', '$http']
   constructor: (@$log, @$resource, @$http) ->
+    qry = { method: 'GET', isArray: true, transformResponse: apiDataTransformer(@$http)}
     @_stops = $resource url, {}, { query: qry, update: {method: "PUT"}}
 
   get: (args) ->
