@@ -52,14 +52,7 @@ class Stops
   url = "/api/stops/:id"
   @$inject: ['$log', '$resource', '$http']
   constructor: (@$log, @$resource, @$http) ->
-    @_stops = $resource url, {id: "@id"}, {
-                 query: {
-                          method: 'GET',
-                          isArray: true,
-                          transformResponse: apiDataTransformer(@$http)
-                        },
-                 update: {method: "PUT"}
-              }
+    @_stops = $resource url, {id: "@id"}, { query: { method: 'GET', isArray: true, transformResponse: apiDataTransformer(@$http) }, update: {method: "PUT"} }
     @pages = 1
     @page = 1
     @page_size = 50
