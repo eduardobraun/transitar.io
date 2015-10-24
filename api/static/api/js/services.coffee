@@ -49,26 +49,13 @@ apiDataTransformer = ($http) ->
 
 class Stops
   url = "/api/stops/:id"
+  qry = { method: 'GET', isArray: true, transformResponse: apiDataTransformer(@$http)}
   @$inject: ['$log', '$resource', '$http']
   constructor: (@$log, @$resource, @$http) ->
-    @_stops = $resource url, {id: "@id"}, { query: { method: 'GET', isArray: true, transformResponse: apiDataTransformer(@$http) }, update: {method: "PUT"} }
-    @pages = 1
-    @page = 1
-    @page_size = 50
-    @_stops.get({page:@page, page_size:@page_size}).d.then (d) =>
-      @pages = d.meta.pagination.pages
+    @_stops = $resource url, {}, { query: qry, update: {method: "PUT"}}
 
-  all: () ->
-    res = []
-    p = 1
-    while p <= @pages
-       page = @_stops.get({page:p, page_size:@page_size})
-       res = res.concat(page)
-       p = p+1
-    return res
-
-  one: (id) ->
-    return @_stops.get({id:id})
+  get: (args) ->
+    return @_stops.get(args)
 
 angular.module("#{base_name}.stops", []).service "#{base_name}.stops", Stops
 
