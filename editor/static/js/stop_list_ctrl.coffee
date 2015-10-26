@@ -3,7 +3,6 @@
 class StopListCtrl
   @$inject: ['$scope', 'api.services.stops']
   constructor: (@$scope, @stpsvc) ->
-    # console.log(@$scope)
     @$scope.stops = stpsvc.get({page:1, page_size:100})
     @$scope.stops.$promise.then (d) =>
       @$scope.stops = d
