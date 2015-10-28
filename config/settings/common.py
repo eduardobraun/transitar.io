@@ -45,6 +45,7 @@ THIRD_PARTY_APPS = (
     # 'allauth.socialaccount.providers.twitter',
     'rest_framework',
     'rest_framework_gis',
+    'rest_framework.authtoken',
     'corsheaders',
     'static_precompiler',
 )
