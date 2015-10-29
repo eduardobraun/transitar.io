@@ -344,8 +344,10 @@ REST_FRAMEWORK = {
     ),
 }
 
-
+# Cross site access
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ORIGIN_WHITELIST = ()
 
+# Static precompiler settings
 STATIC_PRECOMPILER_OUTPUT_DIR = "dist"
+
