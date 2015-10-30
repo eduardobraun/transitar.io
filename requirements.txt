@@ -62,8 +62,8 @@ django-debug-toolbar
 django-extensions
 
 django-cors-headers
-markdown       # Markdown support for the browsable API.
-django-filter  # Filtering support
+markdown
+django-filter
 pytest-django
 pytest
 
